@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
         destination: '/:slug',
         permanent: true,
       },
+      {
+        source: '/favicon.ico',
+        destination: '/favicon.png',
+        permanent: true,
+      },
     ];
   },
 };

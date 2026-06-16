@@ -1,4 +1,5 @@
 // Force Next.js Fast Refresh
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -17,7 +18,49 @@ export function generateStaticParams() {
 
 export const dynamic = 'force-dynamic';
 
-export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+type CategoryPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const category = categoriesData.find((c) => c.slug === slug);
+
+  if (!category) {
+    return {
+      title: { absolute: 'Sayfa Bulunamadı | Perdens' },
+      robots: { index: false, follow: false },
+    };
+  }
+
+  let title = category.title;
+  let description = category.shortDesc;
+
+  try {
+    const contentSnap = await getDoc(doc(db, 'categories_content', slug));
+    if (contentSnap.exists()) {
+      const data = contentSnap.data();
+      if (data.title) title = String(data.title);
+      if (data.shortDesc) description = String(data.shortDesc);
+    }
+  } catch {
+    // Firestore erişilemezse statik kategori verisini kullan
+  }
+
+  return {
+    title: { absolute: `${title} | Perdens` },
+    description,
+    alternates: { canonical: `/${slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/${slug}`,
+      type: 'website',
+    },
+  };
+}
+
+export default async function CategoryPage({ params }: CategoryPageProps) {
   const resolvedParams = await params;
   const { slug } = resolvedParams;
 

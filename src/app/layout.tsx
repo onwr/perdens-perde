@@ -19,7 +19,17 @@ export const metadata: Metadata = {
   },
   description: "Ofis, banka, otel ve ticari alanlar için yenilikçi, modern ve estetik stor ve jaluzi sistemleri.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    siteName: "Perdens",
+    locale: "tr_TR",
+    type: "website",
   },
   verification: {
     google: "googleeca447b02b43d691",

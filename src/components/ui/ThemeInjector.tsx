@@ -30,8 +30,7 @@ export default function ThemeInjector() {
     const faviconUrl = settings.logos?.faviconUrl;
     if (!faviconUrl) return;
 
-    // Tarayıcı önbelleğini kırmak için zaman damgası ekliyoruz
-    const url = `${faviconUrl}?v=${Date.now()}`;
+    const url = faviconUrl;
 
     // Mevcut tüm favicon link'lerini güncelle
     const links = document.head.querySelectorAll<HTMLLinkElement>(

@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
+
+export const metadata: Metadata = {
+  title: { absolute: "Perdens Perde Sistemleri" },
+  description: "Ofis, banka, otel ve ticari alanlar için yenilikçi, modern ve estetik stor ve jaluzi sistemleri.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Perdens Perde Sistemleri",
+    description: "Ofis, banka, otel ve ticari alanlar için yenilikçi, modern ve estetik stor ve jaluzi sistemleri.",
+    url: "/",
+  },
+};
 import Hero from "@/components/home/Hero";
 import Categories from "@/components/home/Categories";
 import Corporate from "@/components/home/Corporate";

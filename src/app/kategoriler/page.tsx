@@ -1,9 +1,21 @@
+import type { Metadata } from 'next';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { categoriesData } from '@/data/categories';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Moon, Scissors, Layers2, Leaf, Sparkles, Sun, Phone, Check } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: { absolute: 'Perde Kategorileri | Perdens' },
+  description: 'Stor perde, zebra perde, jaluzi ve motorlu perde sistemleri. Tüm perde kategorilerimizi inceleyin.',
+  alternates: { canonical: '/kategoriler' },
+  openGraph: {
+    title: 'Perde Kategorileri | Perdens',
+    description: 'Stor perde, zebra perde, jaluzi ve motorlu perde sistemleri. Tüm perde kategorilerimizi inceleyin.',
+    url: '/kategoriler',
+  },
+};
 
 export default function KategorilerPage() {
   return (
