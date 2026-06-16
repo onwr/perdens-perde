@@ -38,7 +38,9 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
   const url = `/blog/${post.slug}`;
 
   return {
-    title: `${post.title} | Perdens Blog`,
+    title: {
+      absolute: `${post.title} | Perdens Blog`,
+    },
     description,
     alternates: {
       canonical: url,

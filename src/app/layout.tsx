@@ -13,7 +13,10 @@ import ThemeInjector from "@/components/ui/ThemeInjector";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://perdens.com'),
-  title: "Perdens Perde Sistemleri",
+  title: {
+    default: "Perdens Perde Sistemleri",
+    template: "%s",
+  },
   description: "Ofis, banka, otel ve ticari alanlar için yenilikçi, modern ve estetik stor ve jaluzi sistemleri.",
   icons: {
     icon: "/favicon.png",

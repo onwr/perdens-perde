@@ -8,7 +8,9 @@ import { getPublishedBlogPosts } from '@/lib/blog';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Perde Sistemleri Blog ve Tasarım Rehberi | Perdens',
+  title: {
+    absolute: 'Perde Sistemleri Blog ve Tasarım Rehberi | Perdens',
+  },
   description: 'Perde sistemleri, jaluzi, stor perde, ofis perde çözümleri ve iç mekan tasarımı hakkında uzman rehberleri.',
   alternates: {
     canonical: '/blog',
