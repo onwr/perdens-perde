@@ -24,6 +24,16 @@ const nextConfig: NextConfig = {
         destination: '/:slug',
         permanent: true,
       },
+      {
+        source: '/favicon.ico',
+        destination: '/favicon.jpeg',
+        permanent: true,
+      },
+      {
+        source: '/favicon.png',
+        destination: '/favicon.jpeg',
+        permanent: true,
+      },
       // Eski / kısa blog slug'ları -> güncel URL'ler (Google eski indeks)
       {
         source: '/blog/perde-mekanizmasi-sistemleri',

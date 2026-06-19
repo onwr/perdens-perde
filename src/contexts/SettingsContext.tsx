@@ -199,7 +199,7 @@ export const defaultSettings: SiteSettings = {
     headerLogo: '/koyulogo.png',
     footerLogo: '/logo.png',
     siteName: 'Perdens Perde',
-    faviconUrl: '/favicon.ico'
+    faviconUrl: '/favicon.jpeg'
   },
   navbar: {
     ctaText: 'Keşif İçin Ara',

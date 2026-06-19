@@ -186,8 +186,8 @@ export default function SiteGenelYonetimi() {
                   }}
                 />
               </label>
-              {logos.faviconUrl && logos.faviconUrl !== '/favicon.ico' && (
-                <button onClick={() => setLogos(p => ({ ...p, faviconUrl: '/favicon.ico' }))}
+              {logos.faviconUrl && logos.faviconUrl !== '/favicon.jpeg' && (
+                <button onClick={() => setLogos(p => ({ ...p, faviconUrl: '/favicon.jpeg' }))}
                   className="flex items-center justify-center gap-2 text-sm text-red-500 border border-red-200 bg-red-50 hover:bg-red-100 h-10 rounded-xl font-bold transition-colors">
                   <Trash2 size={14} /> Varsayılana Dön
                 </button>

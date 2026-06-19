@@ -20,11 +20,10 @@ export const metadata: Metadata = {
   description: "Ofis, banka, otel ve ticari alanlar için yenilikçi, modern ve estetik stor ve jaluzi sistemleri.",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.jpeg", sizes: "any", type: "image/jpeg" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/favicon.png",
+    shortcut: "/favicon.jpeg",
+    apple: "/favicon.jpeg",
   },
   openGraph: {
     siteName: "Perdens",
