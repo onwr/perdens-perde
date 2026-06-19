@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
   }
 
   const description = post.excerpt || stripHtml(post.content).slice(0, 155);
-  const url = `/blog/${post.slug}`;
+  const canonical = `https://perdens.com/blog/${post.slug}`;
 
   return {
     title: {
@@ -43,12 +43,22 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
     },
     description,
     alternates: {
-      canonical: url,
+      canonical,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-snippet': -1,
+        'max-image-preview': 'large',
+      },
     },
     openGraph: {
       title: post.title,
       description,
-      url,
+      url: canonical,
       type: 'article',
       publishedTime: post.createdAt || undefined,
       modifiedTime: post.updatedAt || post.createdAt || undefined,
