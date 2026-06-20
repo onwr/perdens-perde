@@ -2,7 +2,16 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const host = request.headers.get('host') || '';
+  const host = (request.headers.get('host') || '').replace(/:\d+$/, '');
+
+  // profusta.com -> perdens.com (duplicate content / canonical karışıklığı)
+  if (host === 'profusta.com' || host === 'www.profusta.com') {
+    const target = new URL(
+      `${request.nextUrl.pathname}${request.nextUrl.search}`,
+      'https://perdens.com',
+    );
+    return NextResponse.redirect(target, 301);
+  }
 
   // www -> apex (Google indeksini tek domainde toplar)
   if (host.startsWith('www.')) {
